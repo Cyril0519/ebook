@@ -17,11 +17,9 @@ public interface UserService extends IService<User> {
     void register(User user);
 
     // 修改密码
-    void changePassword();
+    void changePassword(User user);
 
     // 修改个人信息
-    void changeUserInfo();
+    void changeUserInfo(User user);
 
-    // 查询个人信息
-    void getUserInfo();
 }

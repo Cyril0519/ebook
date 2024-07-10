@@ -1,4 +1,5 @@
 package com.wxy.user.mapper;
+import org.apache.ibatis.annotations.Param;
 
 import com.wxy.user.domain.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
@@ -12,6 +13,12 @@ import org.apache.ibatis.annotations.Mapper;
 */
 public interface UserMapper extends BaseMapper<User> {
 
+    /**
+     * 根据id修改密码
+     * @param password 密码
+     * @param id 用户id
+     */
+    void updatePasswordById(@Param("password") String password, @Param("id") Long id);
 }
 
 
