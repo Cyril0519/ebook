@@ -1,8 +1,8 @@
 package com.wxy.user.domain.bo;
 
 import com.baomidou.mybatisplus.annotation.TableField;
-import com.wxy.common.pojo.Insert;
-import com.wxy.common.pojo.Query;
+import com.wxy.common.group.Insert;
+import com.wxy.common.group.Query;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;

@@ -4,8 +4,8 @@ package com.wxy.user.controller;
 import cn.dev33.satoken.annotation.SaCheckLogin;
 import cn.dev33.satoken.stp.StpUtil;
 import cn.hutool.core.bean.BeanUtil;
-import com.wxy.common.pojo.Insert;
-import com.wxy.common.pojo.Query;
+import com.wxy.common.group.Insert;
+import com.wxy.common.group.Query;
 import com.wxy.common.pojo.Resp;
 import com.wxy.user.domain.User;
 import com.wxy.user.domain.bo.UserBo;
@@ -15,6 +15,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/user")
 @RequiredArgsConstructor
 public class UserController {
 
@@ -33,6 +34,7 @@ public class UserController {
     // 注册
     public Resp register(@Validated({Insert.class}) @RequestBody UserBo userBo) {
         User user = BeanUtil.toBean(userBo, User.class);
+        user.setId(null);
         userService.register(user);
         return Resp.success("注册成功");
     }
